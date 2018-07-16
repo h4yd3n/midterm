@@ -1,0 +1,82 @@
+[    
+    {   
+        "description": "OOP Application with class and constructor(), constructor takes at least one argument",
+        "points": 25
+    },
+    {
+        "description": "Use of map, filter, reduce (any two)",
+        "points": 5
+    },
+    {
+        "description": "AJAX-JSON to load data into app",
+        "points": 5
+    },
+    {
+        "description": "Dynamic HTML elements using document.createElement(‘div’), etc. for min 5 elements",
+        "points": 5
+    },
+    {
+        "description": "Use of dynamic image(s) with new Image() instantiation",
+        "points": 5
+    },
+    {
+        "description": "Use of dynamic audio with new Audio() or document.getElementById(‘audio’)",
+        "points": 5
+    },
+    {
+        "description": "Use at least two Math methods, Math.random(), Math.floor(), etc.",
+        "points": 5
+    },
+    {
+        "description": "Use of at least 3 array methods: splice(), slice(), push(), pop(), join(), shift(), unshift()",
+        "points": 5
+    },
+    {
+        "description": "Use of at least 1 string method : charAt(), indexOf(), split()",
+        "points": 5
+    },
+    {
+        "description": "Use of Object Sorting by Property Key",
+        "points": 5
+    },
+    {
+        "description": "Use of setTimeout() or setInterval() / clearInterval()",
+        "points": 5
+    },
+    {
+        "description": "Distribution: FTP to Website",
+        "points": 5
+    },
+    {
+        "description": "Distribution: Push to Github",
+        "points": 5
+    },
+    {
+        "description": "CRUD call to Database using PHP-MySQL",
+        "points": 5
+    },
+    {
+        "description": "CRUD call that saves result of user interaction (vote, score, etc)",
+        "points": 5
+    },
+    {
+        "description": "Frontend: use of CSS Grid or Flexbox",
+        "points": 5
+    },
+    {
+        "description": "Frontend: Overall appearance and use of styles / CSS",
+        "points": 5
+    },
+    {
+        "description": "Technical communication: ReadMe.txt file that describes app",
+        "points": 5
+    },
+    {
+        "description": "Technical communication: pseudo-code algorithm",
+        "points": 5
+    },
+    {
+        "description": "Technical communication: public presentation of project (10 minutes)",
+        "points": 5
+    }
+]

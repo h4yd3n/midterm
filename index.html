@@ -1,0 +1,189 @@
+<?php
+
+require_once("conn/connMini.php");
+
+?>
+
+<html>
+
+<head>
+    <title>midterm project</title>
+
+    <link href="css/styles.css" rel="stylesheet">
+
+    <script src="js/Classes/Class.js"></script>
+    <script src="json/midterm.json"></script>
+
+
+
+</head>
+
+<body>
+
+    <script>
+
+        function fetchJSONFile(path, callback) {
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function() {
+                if (httpRequest.readyState === 4) {
+                    if (httpRequest.status === 200) {
+                        var data = JSON.parse(httpRequest.responseText);
+                        if (callback) callback(data);
+                    }
+                }
+            };
+            httpRequest.open('GET', path);
+            httpRequest.send(); 
+        }
+
+// this requests the file and executes a callback with the parsed result once
+//   it is available
+        fetchJSONFile('json/midterm.json', function(data){
+        // do something with your data
+
+            var local_data = data;
+            var row_data = '';
+
+            for (var i = 0; i < local_data.length; i++) {
+            var row_data = row_data + '<tr>' +
+                ' <td>' + (i+1) + '. ' + local_data[i].description + ': + ' + local_data[i].points + '</td>' +
+                '</tr>';
+            }
+            var table_body_element = document.createElement('tbody');
+            table_body_element.innerHTML = row_data;
+            document.getElementById('output_div1').appendChild(table_body_element);
+
+        console.log(data);
+
+            /*
+            var unorderedData = data;
+            var orderedData = {};
+
+            Object.keys(unorderedData).sort().forEach(function(points) {
+            orderedData[points] = unorderedData[points];
+            });
+
+            console.log(JSON.stringify(orderedData));
+            // → '{"a":"baz","b":"foo","c":"bar"}'
+            */
+
+        });
+
+        function output_div2() {
+            var btn = document.createElement("h1");        // Create a <button> element
+            var t = document.createTextNode("new Image()");       // Create a text node
+            btn.appendChild(t);                                // Append the text to <button>
+            document.getElementById('output_div2').appendChild(btn); 
+
+            var pic = new Image();
+            pic.src = "images/DSCF0171-2.jpg";
+            pic.width = 150;
+            document.getElementById('output_div2').appendChild(pic); 
+        }
+
+        function output_div3() {
+            //document.getElementById('output_div3').removeChild(btn); 
+
+            var audiosource = "audio/taunt.wav"
+
+            var btn = document.createElement("h1");        // Create a <button> element
+            var t = document.createTextNode("new Audio(): " + String(audiosource));       // Create a text node
+            btn.appendChild(t);                                // Append the text to <button>
+            document.getElementById('output_div3').appendChild(btn); 
+
+            var myAudio = new Audio(audiosource);
+            myAudio.play();
+        }
+
+        function output_div4() {
+            var btn = document.createElement("h1");        // Create a <button> element
+            var t = document.createTextNode("random number (0-10): " + Math.floor(Math.random() * 10));       // Create a text node
+            btn.appendChild(t);                                // Append the text to <button>
+            document.getElementById('output_div4').appendChild(btn); 
+        }
+
+        function output_div5() {
+            var btn = document.createElement("p");        // Create a <button> element
+            var t = document.createTextNode("3 array methods and map and reduce");       // Create a text node
+            btn.appendChild(t);                                // Append the text to <button>
+            document.getElementById('output_div5').appendChild(btn); 
+
+            var oldArray = [1,2,3,4,5,6]
+            var oldArraySum = 0;
+            
+            oldArray.map((e) => {
+                oldArraySum += e
+            });
+            
+            let even = oldArray.filter(val => {
+                return val%2 === 0;
+            });
+
+            let odd = oldArray.filter(val => {
+                return val%2 !== 0;
+            });
+
+            var evenPush = even.push(8,10)
+            console.log(evenPush)
+
+            var evenSplice = even.splice(3)
+            console.log(evenSplice)
+
+            var joinOddArray = odd.join('-')
+
+            var word = "word";
+            var wordcharat3 = word.charAt(3)
+
+            var table_body_element = document.createElement('p');
+            table_body_element.innerHTML = "sum of [1,2,3,4,5,6] = " + oldArraySum + "<br> filter for even: " + even + "<br> filter for odd: " + odd + "<br> even push 8,10: " + evenPush + "<br> even splice(3): " + evenSplice + "<br> odd array join -: " + joinOddArray + "<br> Word.charAt(3): " + wordcharat3;
+            document.getElementById('output_div5').appendChild(table_body_element);
+
+        }
+
+        function output_div6(){
+
+            var table_body_element = document.createElement('p');
+            table_body_element.innerHTML = 
+                `
+                <form method="post" action="memberJoinProc.php">
+    
+                    Join now
+                                        
+                    <p><input type="text" name="firstName" id="firstName" placeholder="First Name" required></p>
+                    
+                    <p><input type="text" name="lastName" id="lastName" placeholder="Last Name" required></p>
+                    
+                    <p><input type="email" name="email" id="email" placeholder="Email" required></p>
+
+                    <p><input type="submit" name="submit" id="submit" value="Sign Me Up"></p>
+
+                </form>
+                `        
+                ;
+            document.getElementById('output_div6').appendChild(table_body_element);
+        }
+
+    </script>
+
+    <div class="wrapper">
+    <div id="maindiv" class="box box1">
+        <p>the ugliest POS ever</p>
+        <p><a href="#" onclick="output_div2()"> new Image()</a></p>
+        <p><a href="#" onclick="setTimeout(output_div3,2000)"> new Audio() with 2-sec delay</a></p>
+        <p><a href="#" onclick="output_div4()"> random number (0-10)</a></p>
+        <p><a href="#" onclick="output_div5()"> 3 array methods</a></p>
+        <p><a href="#" onclick="output_div6()"> join </a></p>
+        <p><a href="readme.txt"> readme.txt </a></p>
+    </div>
+
+    <div id="output_div1" class="box box2"></div>
+    <div id="output_div2" class="box"></div>
+    <div id="output_div3" class="box"></div>
+    <div id="output_div4" class="box"></div>
+    <div id="output_div5" class="box"></div>
+    <div id="output_div6" class="box"></div>
+    </div>
+
+</body>
+
+</html>

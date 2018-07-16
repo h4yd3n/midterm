@@ -1,0 +1,99 @@
+#maindiv {
+    width: auto;
+    height: auto;
+    margin: 5%;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;;
+    text-align: center;
+}
+#output_div1 {
+    width: auto;
+    height: auto;
+    margin: 5%;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: left;
+}
+#output_div1 {
+    width: auto;
+    height: auto;
+    margin: 5%;
+    background-color: blue;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: left;
+}
+#output_div2 {
+    width: auto;
+    height: auto;
+    margin: 5%;
+    background-color: black;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+#output_div3 {
+    width: auto;
+    height: auto;
+    margin: 5%;
+    background-color: burlywood;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+#output_div4 {
+    width: auto;
+    height: auto;
+    margin: 5%;
+    background-color: grey;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+#output_div5 {
+    width: auto;
+    height: auto;
+    margin: 5%;
+    background-color: brown;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+#output_div6 {
+    width: auto;
+    height: auto;
+    margin: 5%;
+    background-color: green;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 3fr);
+}
+
+.box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+  }
+  
+.box:nth-child(even) {
+    background-color: #ccc;
+    color: #000;
+  }
